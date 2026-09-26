@@ -1,0 +1,203 @@
+:root {
+  /* Gruvbox Dark Palette - zostawiona dla kontenera, tekstów i przycisków */
+  --gb-bg: #282828;
+  --gb-bg-soft: #3c3836;
+  --gb-fg: #ebdbb2;
+  --gb-yellow: #fabd2f;
+  --gb-green: #b8bb26;
+  --gb-aqua: #8ec07c;
+  --gb-gray: #928374;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  
+  /* NOWY, wyraźnie ruszający się gradient "Deep Space":
+     Głęboki granat -> Ciemny fiolet -> Ciemny morski -> Nocny błękit */
+  background: linear-gradient(-45deg, #0f2027, #2c5364, #203a43, #1e1332);
+  background-size: 400% 400%;
+  animation: moveGradient 12s ease infinite;
+  
+  color: var(--gb-fg);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Klatki kluczowe animacji - to wprawia tło w płynny ruch */
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Ukrywanie języków na podstawie klasy przypisanej do <body> */
+body.lang-pl [data-lang="en"] { display: none !important; }
+body.lang-en [data-lang="pl"] { display: none !important; }
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: var(--gb-bg);
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Mocniejszy cień, żeby okno odstawało od tła */
+  padding: 2rem 3rem;
+  border: 1px solid #504945;
+  position: relative;
+}
+
+/* Przełącznik języków */
+.lang-switcher {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  background: var(--gb-bg-soft);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--gb-gray);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--gb-gray);
+  padding: 6px 12px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  color: var(--gb-fg);
+}
+
+.toggle-btn.active {
+  background: var(--gb-gray);
+  color: var(--gb-bg);
+}
+
+header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--gb-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-size: 1.1rem;
+  color: var(--gb-aqua);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-item {
+  background-color: var(--gb-bg-soft);
+  height: 180px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gb-gray);
+  border: 1px dashed var(--gb-gray);
+}
+
+.cta-section {
+  text-align: center;
+  background-color: var(--gb-bg-soft);
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.cta-section h2 {
+  color: var(--gb-fg);
+  margin-bottom: 1rem;
+}
+
+/* Formatowanie linku do GitHub */
+.github-link {
+  display: inline-block;
+  margin: 1.5rem 0;
+  color: var(--gb-aqua);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease;
+}
+
+.github-link:hover {
+  border-bottom: 2px solid var(--gb-aqua);
+}
+
+/* Przycisk Email */
+.btn {
+  display: inline-block;
+  background-color: var(--gb-green);
+  color: var(--gb-bg);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn:hover {
+  background-color: var(--gb-fg);
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gb-bg-soft);
+  font-size: 0.9rem;
+  color: var(--gb-gray);
+}
+
+footer a {
+  color: var(--gb-yellow);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.terms-content h2 {
+  color: var(--gb-yellow);
+  margin: 2rem 0 0.5rem;
+}
+.terms-content p, .terms-content ul {
+  margin-bottom: 1rem;
+}
+.terms-content ul {
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .lang-switcher { position: relative; top: 0; right: 0; display: inline-flex; margin-bottom: 1rem; }
+  .container { padding: 1.5rem; text-align: center; }
+}

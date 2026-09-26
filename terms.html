@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regulamin / Terms</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="lang-pl">
+
+  <div class="container">
+    
+    <div class="lang-switcher">
+      <button class="toggle-btn btn-pl active" onclick="setLang('pl')">PL</button>
+      <button class="toggle-btn btn-en" onclick="setLang('en')">EN</button>
+    </div>
+
+    <header>
+      <h1 data-lang="pl">Regulamin Świadczenia Usług</h1>
+      <h1 data-lang="en">Terms & Conditions</h1>
+    </header>
+
+    <main class="terms-content">
+      
+      <!-- Wersja Polska -->
+      <div data-lang="pl">
+        <h2>1. Postanowienia ogólne</h2>
+        <p>Składając zamówienie na usługi druku 3D, akceptujesz poniższe warunki. Wykonujemy wydruki na podstawie dostarczonych przez Ciebie plików cyfrowych.</p>
+
+        <h2>2. Ograniczenie odpowiedzialności</h2>
+        <p>Proces druku 3D ma swoje ograniczenia fizyczne. Odpowiadamy wyłącznie za rzetelne wykonanie wydruku z dostarczonego pliku:</p>
+        <ul>
+          <li>Nie gwarantujemy, że wydrukowana część spełni Twoje założenia mechaniczne w praktyce.</li>
+          <li>Nie odpowiadamy za błędy wynikające z wad dostarczonego modelu (np. zbyt cienkie ścianki).</li>
+          <li>Zrzekamy się odpowiedzialności za jakiekolwiek szkody lub straty wynikające z użytkowania wydrukowanych elementów.</li>
+        </ul>
+
+        <h2>3. Zwroty</h2>
+        <p>Usługa polega na stworzeniu spersonalizowanego przedmiotu na zamówienie. Z tego powodu <strong>zamówienia nie podlegają zwrotom</strong>. Jeśli jednak wydruk nie uda się z powodu błędu naszej drukarki, wykonamy go ponownie lub zwrócimy Ci pieniądze.</p>
+
+        <h2 style="margin-top: 3rem; color: var(--gb-gray); font-size: 1rem;">Dane firmy (Administrator Danych Osobowych)</h2>
+        <p style="color: var(--gb-gray); font-size: 0.9rem;">
+          [Imię i Nazwisko / Nazwa Twojej Firmy]<br>
+          NIP: [Twój NIP]<br>
+          Adres: [Twój Adres Działalności], Lublin, Polska<br>
+          E-mail: [Twój E-mail]
+        </p>
+      </div>
+
+      <!-- Wersja Angielska -->
+      <div data-lang="en">
+        <h2>1. General Provisions</h2>
+        <p>By placing an order for 3D printing services, you agree to these terms. We print based on the digital files provided by you.</p>
+
+        <h2>2. Limitation of Liability</h2>
+        <p>3D printing has inherent physical limitations. Our responsibility is strictly limited to executing the print from the provided file:</p>
+        <ul>
+          <li>We do not guarantee that the printed part will meet your mechanical expectations in practice.</li>
+          <li>We are not liable for print failures caused by flaws in the provided model (e.g., walls being too thin).</li>
+          <li>We disclaim all liability for any damages or losses arising from the use of the printed items.</li>
+        </ul>
+
+        <h2>3. Returns & Refunds</h2>
+        <p>This service creates a custom-made physical item. For this reason, <strong>all sales are final and non-refundable</strong>. However, if a print fails due to a hardware error on our end, we will reprint it or issue a refund.</p>
+
+        <h2 style="margin-top: 3rem; color: var(--gb-gray); font-size: 1rem;">Company Information (Data Controller)</h2>
+        <p style="color: var(--gb-gray); font-size: 0.9rem;">
+          [Your First & Last Name / Company Name]<br>
+          NIP (Tax ID): [Your NIP]<br>
+          Address: [Your Business Address], Lublin, Poland<br>
+          Email: [Your Email]
+        </p>
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="index" data-lang="pl" style="font-weight: bold;">&larr; Powrót na stronę główną</a>
+        <a href="index" data-lang="en" style="font-weight: bold;">&larr; Back to Home</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.btn-' + lang).classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Druk 3D / 3D Printing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="lang-pl">
+
+  <div class="container">
+    
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="toggle-btn btn-pl active" onclick="setLang('pl')">PL</button>
+      <button class="toggle-btn btn-en" onclick="setLang('en')">EN</button>
+    </div>
+
+    <header>
+      <h1 data-lang="pl">Usługi Druku 3D</h1>
+      <h1 data-lang="en">3D Printing Services</h1>
+      
+      <p class="location" data-lang="pl">Lublin, Polska</p>
+      <p class="location" data-lang="en">Lublin, Poland</p>
+    </header>
+
+    <main>
+      <!-- Gallery -->
+      <section class="gallery">
+        <div class="gallery-item">Przykład / Example 1</div>
+        <div class="gallery-item">Przykład / Example 2</div>
+        <div class="gallery-item">Przykład / Example 3</div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+
+        <!-- Wersja Polska -->
+        <div data-lang="pl">
+          <h2>Chcesz coś wydrukować?</h2>
+          <p>Zamówienie wydruku jest u nas bardzo proste. Prześlij plik z modelem 3D na nasz e-mail, a my szybko odpowiemy z wyceną.</p>
+          <br>
+          <p><strong>Pamiętaj, aby w wiadomości uwzględnić:</strong></p>
+          <p>Plik .STL lub .OBJ • Wybrany materiał i kolor • Oczekiwane wypełnienie</p>
+
+          <a href="https://github.com/TwojGitHub" class="github-link" target="_blank" rel="noopener noreferrer">
+            > Sprawdź moje projekty na GitHubie <
+          </a>
+
+          <!-- Widoczny E-mail (PL) -->
+          <p style="margin: 1.5rem 0 1rem; font-size: 1.1rem;">
+            Nasz e-mail: <strong style="color: var(--gb-yellow); user-select: all;">todoemail</strong>
+          </p>
+
+          <a href="mailto:todoemail?subject=Wycena%20druku%203D" class="btn">Wyślij e-mail z modelem</a>
+        </div>
+
+        <!-- Wersja Angielska -->
+        <div data-lang="en">
+          <h2>Want to print something?</h2>
+          <p>The ordering process is straightforward. Send us your 3D model via email, and we will get back to you with a quick quote.</p>
+          <br>
+          <p><strong>Please remember to include:</strong></p>
+          <p>.STL or .OBJ file • Desired material and color • Required infill</p>
+
+          <a href="https://github.com/TwojGitHub" class="github-link" target="_blank" rel="noopener noreferrer">
+            > Check out my GitHub projects <
+          </a>
+
+          <!-- Widoczny E-mail (EN) -->
+          <p style="margin: 1.5rem 0 1rem; font-size: 1.1rem;">
+            Our email: <strong style="color: var(--gb-yellow); user-select: all;">todoemail</strong>
+          </p>
+
+          <a href="mailto:todoemail?subject=3D%20Printing%20Quote" class="btn">Send an email with your model</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2026 [Twoja Nazwa].</p>
+      <p>
+        <a href="terms" data-lang="pl">Regulamin i dane firmy</a>
+        <a href="terms" data-lang="en">Terms & Company Details</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    function setLang(lang) {
+      // 100% niezawodny mechanizm: zmieniamy klasę bezpośrednio na <body>
+      document.body.className = 'lang-' + lang;
+      
+      // Przełączanie aktywnego koloru przycisku
+      document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.btn-' + lang).classList.add('active');
+    }
+  </script>
+</body>
+</html>
